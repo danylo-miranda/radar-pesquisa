@@ -4,6 +4,7 @@
 
 # idade_candidato(idade)
 
+from datetime import datetime #biblioteca para executar data e hora.
 
 idade_dos_candidatos = []
 genero_dos_candidatos = []
@@ -11,6 +12,7 @@ pergunta01 = []
 pergunta02 = []
 pergunta03 = []
 pergunta04 = []
+data_e_hora_da_resposta = []
 
 
         
@@ -34,13 +36,18 @@ while True:
     print('Sim (1), Não (2), Não sei responder (3)?')
     pergunta_04 = input('Gostaria do serviço de despachante na compra do seu carro?')
     pergunta04.append(pergunta_04)
+    hora_atual = datetime.now() #Registra o horário 
+    data_e_hora_atual = hora_atual.strftime('%d/%m/%Y %H:%M') #registra a data e implementa o horário da variável 'hora atual'.
+    data_e_hora_da_resposta.append(data_e_hora_atual)
 
 print(idade_dos_candidatos,
       genero_dos_candidatos,
       pergunta01,
       pergunta02,
       pergunta03,
-      pergunta04)
+      pergunta04, 
+      data_e_hora_da_resposta)
 
-for item1, item2, item3, item4, item5, item6 in zip(idade_dos_candidatos,genero_dos_candidatos,pergunta01,pergunta02,pergunta03,pergunta04):
-    print(f'{item1} {item2} {item3} {item4} {item5} {item6}')
+for item1, item2, item3, item4, item5, item6, item7 in zip(idade_dos_candidatos,genero_dos_candidatos,pergunta01,
+pergunta02,pergunta03,pergunta04, data_e_hora_da_resposta):
+    print(f'{item1} {item2} {item3} {item4} {item5} {item6} {item7}')
