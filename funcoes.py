@@ -4,21 +4,13 @@ class Perguntas():
     
     respostas = []
     
-    def obter_resposta(self):  #método criado para fazer o questionamento das 6 perguntas e registrar data e hora
-        self.idade = input('Insira sua idade: ')        
-        self.genero = input('Qual é o seu gênero? ')
-        
-        while True:
-            try:                
-                print('\n Para responder o questionário utilize : Sim (1), Não (2), Não sei responder (3)?')
-                self.p1 = input('\nCompraria um carro pela internet? ')
-                self.p2 = input('\nSe o preço do carro fosse 15% abaixo do valor de mercado, você compraria? ')
-                self.p3 = input('\nTem intenção de comprar um carro nos próximos 6 meses? ')
-                self.p4 = input('\nGostaria do serviço de despachante na compra do seu carro? ')
-                if self.p1 and self.p2 and self.p3 and self.p4 < '1' or self.p1 and self.p2 and self.p3 and self.p4 > '3':
-                    raise ValueError  #função utilizada para levantar uma exceção explicitamente em seu código
-            except ValueError:
-                print('Insira um numero entre 1 e 3 ')        
+    def __init__(self, idade, genero, p1, p2, p3, p4):  #criador
+        self.idade = idade        
+        self.genero = genero       
+        self.p1 = p1
+        self.p2 = p2
+        self.p3 = p3
+        self.p4 = p4                       
         
     def add_lista(self):
         self.respostas.append([self.idade])
@@ -32,15 +24,6 @@ class Perguntas():
         self.respostas.append(data_e_hora_atual)
         print(self.respostas)  #O self é usado para acessar os atributos e métodos da instância dentro da própria classe.
         
-    def responder_pesquisa(self): #metodo criado para verificar a entrada do usuario
-        while True:
-            resposta = self.obter_resposta()
-            if resposta == [00]:
-                break
-            self.respostas.append(resposta)
-        print(self.respostas)                  
     
-    def save_csv(self): #metodo criado para salvar o arquivo em csv
-        return 
     
 
