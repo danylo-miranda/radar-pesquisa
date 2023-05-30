@@ -10,5 +10,9 @@ Desenvolver um projeto capaz de armazenar dados recolhidos na pesquisa em um doc
 
 * Danylo
 
+* Gustavo
+
+* Wdson
+
 
 ---
