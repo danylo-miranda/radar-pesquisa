@@ -32,7 +32,8 @@ while True:
         p4 = input('Opção inválida. Sim (1), Não (2), Não sei responder (3)? ')
         
     questionario = Perguntas(idade, genero, p1, p2, p3, p4)
-    questionario.add_lista()   
+    questionario.add_lista()
+    questionario.save_csv('Dados da Pesquisa')   
     
     
         
