@@ -23,6 +23,7 @@ class Perguntas():
         data_e_hora_atual = hora_atual.strftime('%d/%m/%Y %H:%M') #registra a data e implementa o horário da variável 'hora atual'.
         self.respostas.append(data_e_hora_atual)
         print(self.respostas)  #O self é usado para acessar os atributos e métodos da instância dentro da própria classe.
+    
         
     
     

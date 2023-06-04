@@ -29,10 +29,10 @@ while True:
     print('Sim (1), Não (2), Não sei responder (3)? ')
     p4 = input('Gostaria do serviço de despachante na compra do seu carro?')
     while p4 not in opcoes_validas:
-        p4 = input('Opção inválida. Sim (1), Não (2), Não sei responder (3)?')
+        p4 = input('Opção inválida. Sim (1), Não (2), Não sei responder (3)? ')
         
     questionario = Perguntas(idade, genero, p1, p2, p3, p4)
     questionario.add_lista()   
-
+    
     
         
