@@ -33,7 +33,7 @@ while True:
         
     questionario = Perguntas(idade, genero, p1, p2, p3, p4)
     questionario.add_lista()
-    questionario.save_csv('Dados da Pesquisa')   
+    questionario.save_csv('Dados da Pesquisa')#parametro posicionado com o nome do arquivo a ser salvo   
     
     
         

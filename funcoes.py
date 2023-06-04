@@ -31,7 +31,7 @@ class Perguntas():
             escrever_csv.writerow(['Respostas']) #cabeçalho da tabela utilizando o método writerow.
             for dados in self.respostas: #percorrer a lista respostas e escreve cada um dos elementos no arquivo CSV.
                 escrever_csv.writerow([dados])
-        print(f'Arquivo {nome_arquivo} criado e os dados foram escritos.')
+        print(f'Arquivo *{nome_arquivo}* criado e os dados foram escritos.')
         
     
     
