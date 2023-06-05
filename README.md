@@ -24,13 +24,13 @@
 
 * Aline Braga / Linkedin - (https://www.linkedin.com/in/aline-braga-bozollan/) E-mail - (alinebozollan@gmail.com)
 
-* Denyson de Brito / Linkedin - (https://www.linkedin.com/in/denyson-analista-de-dados)
+* Denyson de Brito / Linkedin - (https://www.linkedin.com/in/denyson-analista-de-dados) 
 
 * Danylo Miranda / Linkedin - (https://www.linkedin.com/in/adm-danylo-miranda/) E-mail - (danylo.s.miranda@gmail.com)
 
 * Gustavo Daher / Linkedin - (https://www.linkedin.com/in/gustavo-daher-/) E-mail - (gustavodaher2003@gmail.com)
 
-* Wdson Danrlei / Linkedin - (https://www.linkedin.com/in/wdson-amado/)
+* Wdson Danrlei / Linkedin - (https://www.linkedin.com/in/wdson-amado/) E-mail - (wdson91@gmail.com)
 
 
 ---
