@@ -26,7 +26,7 @@ class Perguntas():
         print(self.respostas)  #O self é usado para acessar os atributos e métodos da instância dentro da própria classe.
     
     def save_csv(self,nome_arquivo): #metodo que salva o arquivo em .csv/ abre o arquivo CSV no modo de escrita.
-        with open(nome_arquivo, 'w', newline='') as arquivo_csv:#parâmetro newline='' para que não haja linhas em branco no arquivo.  
+        with open(f'{nome_arquivo}.csv', 'w', newline='') as arquivo_csv:#parâmetro newline='' para que não haja linhas em branco no arquivo.  
             escrever_csv = csv.writer(arquivo_csv) #cria um objeto que irá escrever no arquivo CSV. 
             escrever_csv.writerow(['Respostas']) #cabeçalho da tabela utilizando o método writerow.
             for dados in self.respostas: #percorrer a lista respostas e escreve cada um dos elementos no arquivo CSV.
