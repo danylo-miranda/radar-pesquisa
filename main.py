@@ -39,13 +39,18 @@ def escrever(dados):
 while True:
     genero_lista =['1','2','3']
     opcoes_validas = ['1','2','3'] #validar a entrada do usuário e garantir que ele digite uma opção válida
-    idade = input('Qual a idade do candidato?')
-    
-    if idade == '00':
-        print('Programa encerrado.')
-        exit()
-    while idade.isnumeric() == False:
-        idade = input('Idade inválida. Qual a idade do candidato?')
+    while True:
+        idade = input('Qual a idade do candidato? ')
+        if idade == '00':
+            print('Programa encerrado.')
+            exit()
+        elif idade.isdigit() and int(idade) >= 18:
+            break
+        else:
+            print('Idade inválida. Por favor, digite um número válido maior ou igual a 18.')
+
+# Continuar com o restante do programa após obter uma idade válida
+
     genero = input('Qual o gênero do candidato? Masculino (1), Feminino (2), Outro (3)? ')    
     while genero not in genero_lista:
         genero = input('Opção inválida. Masculino (1), Feminino (2), Outro (3)? ')    
