@@ -4,7 +4,7 @@ import pandas as pd
 import os
 import time
 
-def escrever(dados): 
+def escreverCsv(dados): 
 # Verifica se o arquivo CSV já existe
     nome_arquivo = 'dados.csv'
     arquivo_existe = os.path.isfile(nome_arquivo)
@@ -104,8 +104,8 @@ while True:
     questionario = Perguntas(idade, genero, p1, p2, p3, p4)
     
     dados = questionario.add_lista() 
-    print(dados)
-    escrever(dados)
+    
+    escreverCsv(dados)
 
 
     
