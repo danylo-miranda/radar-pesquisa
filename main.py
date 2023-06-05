@@ -1,38 +1,49 @@
 from funcoes import*
 import csv
-nome_arquivo = 'dados.csv'
+import pandas as pd
+import os
+import time
 
-
-
-
-def escrever(dados,p1, p2, p3, p4):
+def escrever(dados): 
+# Verifica se o arquivo CSV já existe
+    nome_arquivo = 'dados.csv'
+    arquivo_existe = os.path.isfile(nome_arquivo)
     
-    try:
-        with open(nome_arquivo, 'r') as file:
-            reader = csv.reader(file)
-            
-            primeira_linha = next(reader)
-            tem_dados = True
-    except StopIteration:
-        tem_dados = False
-    if  tem_dados == False:
-        with open(nome_arquivo, 'w', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow(['idade', 'genero', 'p1', 'p2', 'p3', 'p4', 'data_hora'])
-            writer.writerow(dados)
-        print(f'Arquivo {nome_arquivo} criado e dados foram escritos.')
+    # Dados a serem adicionados ao arquivo CSV
+    novos_dados = {'Idade': [dados[0]], 'Genero': [dados[1]], 'Pergunta1': [dados[2]], 'Pergunta2': [dados[3]], 'Pergunta3': [dados[4]], 'Pergunta4': [dados[5]], 'Data/Hora': [dados[6]]}
+
+    # Se o arquivo já existe, carrega o conteúdo existente
+    if arquivo_existe:
+        # Carrega o arquivo CSV existente para um DataFrame
+        df_existente = pd.read_csv(nome_arquivo)
+
+        # Adiciona os novos dados ao DataFrame existente
+        df_novo = pd.DataFrame(novos_dados)
+        df_final = pd.concat([df_existente, df_novo], ignore_index=True)
+
+        # Salva o DataFrame atualizado de volta para o arquivo CSV
+        df_final.to_csv(nome_arquivo, index=False)
+        print("\nSalvando Pesquisa...")
+        time.sleep(1)
+
     else:
-        with open(nome_arquivo, 'a', newline='') as file:
-            writer = csv.writer(file)
-            
-            writer.writerow(dados)
+        # Se o arquivo não existe, cria um novo arquivo CSV com os novos dados
+        df_novo = pd.DataFrame(novos_dados)
+        df_novo.to_csv(nome_arquivo, index=False)
+        print("\nSalvando Pesquisa...")
+        time.sleep(1)
+
+
+
+
 while True:
     genero_lista =['1','2','3']
     opcoes_validas = ['1','2','3'] #validar a entrada do usuário e garantir que ele digite uma opção válida
     idade = input('Qual a idade do candidato?')
     
     if idade == '00':
-        break
+        print('Programa encerrado.')
+        exit()
     while idade.isnumeric() == False:
         idade = input('Idade inválida. Qual a idade do candidato?')
     genero = input('Qual o gênero do candidato? Masculino (1), Feminino (2), Outro (3)? ')    
@@ -62,14 +73,35 @@ while True:
     p4 = input('Gostaria do serviço de despachante na compra do seu carro?')
     while p4 not in opcoes_validas:
         p4 = input('Opção inválida. Sim (1), Não (2), Não sei responder (3)?')
-        
-    questionario = Perguntas(idade, genero, p1, p2, p3, p4)
-    dados = questionario.add_lista() 
-    #dados_transpostos = list(map(list, zip(*dados)))
-    #dados_planos = [item for sublist in dados for item in sublist]
     
-    escrever(dados,p1, p2, p3, p4)
-     
+    if genero == '1':
+        genero = 'Masculino'
+    elif genero == '2':
+        genero = 'Feminino'
+    elif genero == '3':
+        genero = 'Outro'                  
+    
+    def opcoes(p):
+        if p == '1':
+            p = 'Sim'
+        elif p == '2':
+            p = 'Nao'
+        elif p == '3':
+            p = 'Nao sei responder'
+        return p
+    
+    
+    p1 = opcoes(p1)
+    p2 = opcoes(p2)
+    p3 = opcoes(p3)
+    p4 = opcoes(p4)  
+    
+    questionario = Perguntas(idade, genero, p1, p2, p3, p4)
+    
+    dados = questionario.add_lista() 
+    print(dados)
+    escrever(dados)
+
 
     
     

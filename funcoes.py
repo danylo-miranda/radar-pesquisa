@@ -10,7 +10,7 @@ class Perguntas():
         self.p1 = p1
         self.p2 = p2
         self.p3 = p3
-        self.p4 = p4                       
+        self.p4 = p4                  
         
     def add_lista(self):
         self.respostas = []
