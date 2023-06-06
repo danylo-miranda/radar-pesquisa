@@ -24,7 +24,9 @@
 
 # Como utilizar 
 #### Para utilizar o programa, basta seguir as intruções abaixo:
-* Instale o Panda
+* Instale duas bibliotecas 
+* pip install pandas
+* pip install matplotlib
 * Clone o repositório radar-pesquisa
 * Execute o arquivo main.py
 
