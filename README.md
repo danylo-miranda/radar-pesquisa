@@ -17,10 +17,10 @@
 ---
 
 # Desafio do Projeto
-#### Desenvolver um projeto capaz de armazenar dados recolhidos na pesquisa em um documento .csv, a partir da coleta de dados desta pesquisa apresentar os resultados para empresa que solicitou este serviço.
+#### Desenvolver um programa capaz de armazenar dados recolhidos na pesquisa e exportar em um arquivo do tipo csv.
 
 # Desenvolvimento
-#### Baseado neste desafio foi desenvolvido um código que possui dois arquivos, funcoes.py que contém a importação do arquuivo CSV, classes e metódos que o programa necessita e o arquivo main.py onde ocorre a entrada do usuário e o uso de estrutura de repetição para a validação e coletas de dados da pesquisa, ainda no arquivo main.py são armazenados os dados em um documento .csv
+#### Baseado neste desafio foi desenvolvido um código que possui arquivos como, funcoes.py que contém classes e metódos que o programa necessita e o arquivo main.py onde ocorre a entrada do usuário e o uso de estrutura de repetição para a validação e coletas de dados da pesquisa, ainda no arquivo main.py são armazenados os daddos em .csv
 
 # Como utilizar 
 #### Para utilizar o programa, basta seguir as intruções abaixo:
