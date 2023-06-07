@@ -6,24 +6,24 @@ import time
 
 class Perguntas(): 
     
-    respostas = []
+    respostas = []# Lista para armazenar respostas do questionário 
     
-    def __init__(self, idade, genero, p1, p2, p3, p4):  #criador
-        self.idade = idade        
-        self.genero = genero       
-        self.p1 = p1
-        self.p2 = p2
-        self.p3 = p3
-        self.p4 = p4                  
+    def __init__(self, idade, genero, p1, p2, p3, p4):  #metódo construtor 
+        self.__idade = idade #encapsulamento para proteção do atributo 
+        self.__genero = genero       
+        self.__p1 = p1
+        self.__p2 = p2
+        self.__p3 = p3
+        self.__p4 = p4                  
         
     def add_lista(self):
         self.respostas = []
-        self.respostas.append(self.idade)
-        self.respostas.append(self.genero) 
-        self.respostas.append(self.p1)
-        self.respostas.append(self.p2)
-        self.respostas.append(self.p3)
-        self.respostas.append(self.p4)
+        self.respostas.append(self.__idade)
+        self.respostas.append(self.__genero) 
+        self.respostas.append(self.__p1)
+        self.respostas.append(self.__p2)
+        self.respostas.append(self.__p3)
+        self.respostas.append(self.__p4)
         hora_atual = datetime.now() #Registra o horário
         data_e_hora_atual = hora_atual.strftime('%d/%m/%Y %H:%M') #registra a data e implementa o horário da variável 'hora atual'.
         self.respostas.append(data_e_hora_atual)
@@ -60,7 +60,7 @@ def escreverCsv(dados):
         print("\nSalvando Pesquisa...")
         time.sleep(1)
 
-def opcoes(p):
+def opcoes(p): #Validação das perguntas do questionário exceto idade 
         if p == '1':
             p = 'Sim'
         elif p == '2':
