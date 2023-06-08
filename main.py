@@ -4,7 +4,7 @@ while True:
     genero_lista =['1','2','3']
     opcoes_validas = ['1','2','3'] #validar a entrada do usuário e garantir que ele digite uma opção válida
     while True:
-        idade = input('Qual a idade do candidato? ')
+        idade = input('Qual a idade do candidato? \nOu digite 00 para encerrar o programa: ')
         if idade == '00':
             print('Programa encerrado.')
             exit()

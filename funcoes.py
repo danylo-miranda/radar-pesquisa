@@ -50,15 +50,17 @@ def escreverCsv(dados):
 
         # Salva o DataFrame atualizado de volta para o arquivo CSV
         df_final.to_csv(nome_arquivo, index=False)
-        print("\nSalvando Pesquisa...")
+        print("\nSalvando Pesquisa...\n")        
         time.sleep(1)
+        
 
     else:
         # Se o arquivo não existe, cria um novo arquivo CSV com os novos dados
         df_novo = pd.DataFrame(novos_dados)
         df_novo.to_csv(nome_arquivo, index=False)
-        print("\nSalvando Pesquisa...")
+        print("\nSalvando Pesquisa...\n")        
         time.sleep(1)
+        
 
 def opcoes(p): #Validação das perguntas do questionário exceto idade 
         if p == '1':
