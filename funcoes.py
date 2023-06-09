@@ -5,31 +5,24 @@ import os
 import time
 
 class Perguntas(): 
-    
+
     respostas = []# Lista para armazenar respostas do questionário 
-    
+
     def __init__(self, idade, genero, p1, p2, p3, p4):  #metódo construtor 
         self.__idade = idade #encapsulamento para proteção do atributo 
         self.__genero = genero       
-        self.__p1 = p1
-        self.__p2 = p2
-        self.__p3 = p3
-        self.__p4 = p4                  
-        
+        self.__p1 = opcoes(p1)
+        self.__p2 = opcoes(p2)
+        self.__p3 = opcoes(p3)
+        self.__p4 = opcoes(p4)               
+
     def add_lista(self):
         self.respostas = []
-        self.respostas.append(self.__idade)
-        self.respostas.append(self.__genero) 
-        self.respostas.append(self.__p1)
-        self.respostas.append(self.__p2)
-        self.respostas.append(self.__p3)
-        self.respostas.append(self.__p4)
         hora_atual = datetime.now() #Registra o horário
         data_e_hora_atual = hora_atual.strftime('%d/%m/%Y %H:%M') #registra a data e implementa o horário da variável 'hora atual'.
-        self.respostas.append(data_e_hora_atual)
-        return self.respostas
-          #O self é usado para acessar os atributos e métodos da instância dentro da própria classe.
-        
+        self.respostas.append([self.__idade,self.__genero,self.__p1,self.__p2,self.__p3,self.__p4,data_e_hora_atual])
+        return self.respostas #O self é usado para acessar os atributos e métodos da instância dentro da própria classe.
+
 
 def escreverCsv(dados): 
 # Verifica se o arquivo CSV já existe
@@ -37,7 +30,7 @@ def escreverCsv(dados):
     arquivo_existe = os.path.isfile(nome_arquivo)
     
     # Dados a serem adicionados ao arquivo CSV
-    novos_dados = {'Idade': [dados[0]], 'Genero': [dados[1]], 'Pergunta1': [dados[2]], 'Pergunta2': [dados[3]], 'Pergunta3': [dados[4]], 'Pergunta4': [dados[5]], 'Data/Hora': [dados[6]]}
+    novos_dados = {'Idade': [dados[0][0]], 'Genero': [dados[0][1]], 'Pergunta1': [dados[0][2]], 'Pergunta2': [dados[0][3]], 'Pergunta3': [dados[0][4]], 'Pergunta4': [dados[0][5]], 'Data/Hora': [dados[0][6]]}
 
     # Se o arquivo já existe, carrega o conteúdo existente
     if arquivo_existe:
@@ -52,7 +45,7 @@ def escreverCsv(dados):
         df_final.to_csv(nome_arquivo, index=False)
         print("\nSalvando Pesquisa...\n")        
         time.sleep(1)
-        
+        print('Pesquisa salva com sucesso!\n')
 
     else:
         # Se o arquivo não existe, cria um novo arquivo CSV com os novos dados
@@ -60,8 +53,8 @@ def escreverCsv(dados):
         df_novo.to_csv(nome_arquivo, index=False)
         print("\nSalvando Pesquisa...\n")        
         time.sleep(1)
+        print('Pesquisa salva com sucesso!\n')
         
-
 def opcoes(p): #Validação das perguntas do questionário exceto idade 
         if p == '1':
             p = 'Sim'
@@ -70,3 +63,7 @@ def opcoes(p): #Validação das perguntas do questionário exceto idade
         elif p == '3':
             p = 'Nao sei responder'
         return p
+
+def imprimirOpcoes():
+    print('*'*30)
+    print('Sim (1), Não (2), Não sei responder (3)? ')
