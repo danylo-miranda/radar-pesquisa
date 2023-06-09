@@ -23,6 +23,19 @@ class Perguntas():
         self.respostas.append([self.__idade,self.__genero,self.__p1,self.__p2,self.__p3,self.__p4,data_e_hora_atual])
         return self.respostas #O self é usado para acessar os atributos e métodos da instância dentro da própria classe.
 
+def opcoes(p): #Validação das perguntas do questionário exceto idade 
+        if p == '1':
+            p = 'Sim'
+        elif p == '2':
+            p = 'Nao'
+        elif p == '3':
+            p = 'Nao sei responder'
+        return p
+
+def imprimirOpcoes():
+    print('*'*30)
+    print('Sim (1), Não (2), Não sei responder (3)? ')
+
 
 def escreverCsv(dados): 
 # Verifica se o arquivo CSV já existe
@@ -55,15 +68,3 @@ def escreverCsv(dados):
         time.sleep(1)
         print('Pesquisa salva com sucesso!\n')
         
-def opcoes(p): #Validação das perguntas do questionário exceto idade 
-        if p == '1':
-            p = 'Sim'
-        elif p == '2':
-            p = 'Nao'
-        elif p == '3':
-            p = 'Nao sei responder'
-        return p
-
-def imprimirOpcoes():
-    print('*'*30)
-    print('Sim (1), Não (2), Não sei responder (3)? ')
