@@ -1,5 +1,4 @@
 from datetime import datetime #importa a biblioteca responsavel por inserir data e hora
-import csv
 import pandas as pd
 import os
 import time
