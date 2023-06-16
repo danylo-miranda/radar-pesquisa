@@ -8,7 +8,7 @@ opcoes_validas = ['1', '2', '3']
 lista2 = []
 
     
-for i in range(5):
+for i in range(5):#DETERMINA A QUANTIDADE DE PESQUISAS QUE SERÃO FEITAS DE MANEIRA AUTOMATICA E ALEATÓRIA
     idade = random.randint(18, 60)
     genero = random.choice(genero_lista)
     p1 = random.choice(opcoes_validas)
