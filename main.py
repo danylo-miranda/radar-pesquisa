@@ -1,11 +1,12 @@
 from funcoes import*
-
+lista2 = []
 while True:
     genero_lista =['1','2','3']
     opcoes_validas = ['1','2','3'] #validar a entrada do usuário e garantir que ele digite uma opção válida
     while True:
         idade = input('Qual a idade do candidato? \nOu digite 00 para encerrar o programa: ')
         if idade == '00':
+            escreverCsv(lista2)
             print('Programa encerrado.')
             exit()
         elif idade.isdigit() and int(idade) >= 18:
@@ -38,7 +39,7 @@ while True:
     p4 = input('Gostaria do serviço de despachante na compra do seu carro?')
     while p4 not in opcoes_validas:
         p4 = input('Opção inválida. Sim (1), Não (2), Não sei responder (3)?')
-    
+        print('\n')    
     if genero == '1':
         genero = 'Masculino'
     elif genero == '2':
@@ -50,4 +51,8 @@ while True:
     
     dados = questionario.add_lista() 
     
-    escreverCsv(dados)
+    lista2.append(dados)
+    print('\n')
+    print("Obrigado por participar da pesquisa!")
+    print('\n')
+    

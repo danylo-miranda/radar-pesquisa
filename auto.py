@@ -1,6 +1,6 @@
 from funcoes import*
 import csv
-import pandas as pd
+#import pandas as pd
 import os
 import random
 import time
@@ -8,6 +8,7 @@ import time
 
 genero_lista = ['1', '2', '3']
 opcoes_validas = ['1', '2', '3']
+
 def escrever(dados): 
 # Verifica se o arquivo CSV já existe
     nome_arquivo = 'dados.csv'
@@ -29,15 +30,17 @@ def escrever(dados):
         df_final.to_csv(nome_arquivo, index=False)
         print("\nSalvando Pesquisa...")
         time.sleep(1)
-
+        print('Pesquisa salva com sucesso!\n')
+        
     else:
         # Se o arquivo não existe, cria um novo arquivo CSV com os novos dados
         df_novo = pd.DataFrame(novos_dados)
         df_novo.to_csv(nome_arquivo, index=False)
         print("\nSalvando Pesquisa...")
         time.sleep(1)
-
-while True:
+        print('Pesquisa salva com sucesso!\n')
+        
+for i in range(5):
     idade = random.randint(18, 60)
     genero = random.choice(genero_lista)
     p1 = random.choice(opcoes_validas)
@@ -68,5 +71,4 @@ while True:
     dados = questionario.add_lista() 
     print(dados)
     escrever(dados)
-    print('Pesquisa salva com sucesso!')
-    time.sleep(2)
+    
